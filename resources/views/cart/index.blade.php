@@ -6,9 +6,7 @@
             <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>{{ Session::get('success') }}</strong>
         </div>
-
     @endif
-
     @if (Session::has('delete_error'))
         <div class="col-12 alert alert-danger alert-block">
             <button type="button" class="close" data-dismiss="alert">×</button>

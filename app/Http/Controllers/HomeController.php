@@ -12,4 +12,18 @@ class HomeController extends Controller
         $products = Product::all();
         return view('home-page.index', compact('products'));
     }
+
+    public function create(){
+        return view('home-page.create');
+    }
+
+    public function show($id){
+        $products = Product::findOrFail($id);
+        return view('show',compact(['products']));
+    }
+    public function main(){
+        return view('main');
+    }
+
+
 }

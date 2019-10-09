@@ -1,7 +1,14 @@
 @extends('welcome')
 
 @section('content')
-    <h3 class="h3">Product List</h3>
+    @if (Session::has('not-login'))
+        <div class="not-login">
+            <p class="text-danger">{{ Session::get('not-login') }}</p>
+        </div>
+    @endif
+
+    <h3 class="h3"><img src="{{asset('storage/ps4gif.gif')}}" width="500px" height="100px"></h3>
+{{--    <img class="pic-1" src="{{ asset('storage/' . $product->image) }}">--}}
     <div class="row">
         @if (Session::has('success'))
             <div class="col-12 alert alert-success alert-block">
@@ -20,14 +27,14 @@
         @endif
 
         @forelse($products as $product)
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-8">
                 <div class="product-grid">
                     <div class="product-image">
                         <a href="#">
                             <img class="pic-1" src="{{ asset('storage/' . $product->image) }}">
                         </a>
                         <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                            <li><a href="{{ route('home.show', $product->id)}}" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                             <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
                             <li><a href="{{ route('cart.addToCart', $product->id) }}" data-tip="Add to Cart"><i
                                         class="fa fa-shopping-cart"></i></a></li>
@@ -47,7 +54,8 @@
                         <div class="price">$16.00
                             <span>$20.00</span>
                         </div>
-                        <a class="add-to-cart" href="{{ route('cart.addToCart', $product->id) }}">+ Add To Cart</a>
+
+
                     </div>
                 </div>
             </div>
@@ -55,5 +63,10 @@
             <p>{{ "Không có sản phẩm nào" }}</p>
         @endforelse
     </div>
+    <br>
+
+    <a href="{{ route('login.index') }}">
+        <button type="button" class="btn btn-outline-primary">Đăng Xuất</button>
+    </a>
 
 @endsection
