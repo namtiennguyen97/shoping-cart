@@ -65,8 +65,6 @@
     </div>
     <br>
 
-    <a href="{{ route('login.index') }}">
-        <button type="button" class="btn btn-outline-primary">Đăng Xuất</button>
-    </a>
+
 
 @endsection

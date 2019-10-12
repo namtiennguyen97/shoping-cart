@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/shop','HomeController@index')->name('home.index');
+Route::get('/shop','ProductController@index')->name('home.index');
 
 Route::get('/cart','ShoppingCartController@index')->name('cart.index');
 
@@ -22,5 +22,16 @@ Route::post('/update-to-cart/{id}', 'ShoppingCartController@updateProductIntoCar
 Route::get('/login','LoginController@showLogin')->name('login.index');
 Route::post('/login','LoginController@login');
 
-Route::get('/show/{id}','HomeController@show')->name('home.show');
-Route::get('/','HomeController@main')->name('home.main');
+Route::get('/show/{id}','ProductController@show')->name('home.show');
+Route::get('/','ProductController@main')->name('home.main');
+
+Route::group(['prefix'=>'products'],function (){
+   Route::get('/','ProductController@index')->name('products.index');
+   Route::get('/create','ProductController@create')->name('products.create');
+   Route::post('/create','ProductController@store')->name('products.store');
+   Route::get('{id}/edit','ProductController@edit')->name('products.edit');
+   Route::post('/{id}/edit','ProductController@update')->name('products.update');
+   Route::get('/{id}/destroy','ProductController@destroy')->name('products.destroy');
+});
+Route::get('/home','ProductController@home')->name('display');
+Route::get('/autho','ProductController@autho')->name('autho');

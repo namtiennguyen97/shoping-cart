@@ -11,25 +11,14 @@ class LoginController extends Controller
     }
     public function login(Request $request)
     {
-        // Lấy thông tin đang nhập từ request được gửi lên từ trình duyệt
         $username = $request->inputUsername;
         $password = $request->inputPassword;
-
-        // Kiểm tra thông tin đăng nhập
-        if ($username == 'admin' && $password == '123456') {
-
-            //Nếu thông tin đăng nhập chính xác, Tạo một Session lưu trữ trạng thái đăng nhập
+        if ($username == 'nam' && $password == '123456') {
             $request->session()->push('login', true);
-
-            // Đi đến route show.blog, để chuyển hướng người dùng đến trang can thiet
-            return redirect()->route('home.index');
+            return redirect()->route('autho');
         }
-
-        // Nếu thông tin đăng nhập không chính xác, gán thông báo vào Session
-        $message = 'Đăng nhập không thành công. Tên người dùng hoặc mật khẩu không đúng.';
+        $message = 'Đăng nhập thất bại, hãy cấp quyền Admin để truy cập';
         $request->session()->flash('login-fail', $message);
-
-        //Quay trở lại trang đăng nhập
         return view('login');
     }
 }

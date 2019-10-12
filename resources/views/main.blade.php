@@ -1,228 +1,349 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zxx">
 <head>
+    <title>EndGam - Gaming Magazine Template</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="EndGam Gaming Magazine Template">
+    <meta name="keywords" content="endGam,gGaming, magazine, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="{{asset('HTML/img/favicon.ico')}}" rel="shortcut icon"/>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-    <title>Welcome to Ps4 workshop</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset("startbootstrap-grayscale-gh-pages/vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{asset('HTML/css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('HTML/css/font-awesome.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('HTML/css/slicknav.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('HTML/css/owl.carousel.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('HTML/css/magnific-popup.css')}}"/>
+    <link rel="stylesheet" href="{{asset('HTML/css/animate.css')}}"/>
 
-    <!-- Custom fonts for this template -->
-    <link href="{{asset('startbootstrap-grayscale-gh-pages/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Main Stylesheets -->
+    <link rel="stylesheet" href="{{asset('HTML/css/style.css')}}"/>
 
-    <!-- Custom styles for this template -->
-    <link href="{{asset('startbootstrap-grayscale-gh-pages/css/grayscale.min.css')}}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
 
-<body id="page-top">
-@yield('content')
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Ps4 Gaming</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">Khuyến mãi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#projects">Thông tin chung</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#signup">Liên h</a>
-                </li>
-            </ul>
+<!-- Header section -->
+<header class="header-section">
+    <div class="header-warp">
+        <div class="header-social d-flex justify-content-end">
+            <p>Follow us:</p>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-behance"></i></a>
         </div>
-    </div>
-</nav>
 
-<!-- Header -->
-<header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-        <div class="mx-auto text-center">
-            <h1 class="mx-auto my-0 text-uppercase">Ps4</h1>
-            <h2 class="text-white-50 mx-auto mt-2 mb-5">Ps4-Gaming cung cấp và cập nhật đầy đủ các tựa game ps mới phát hành, cũng như mua bán hợp pháp CD bản quyền.</h2>
-            <a href="{{route('home.index')}}" class="btn btn-primary js-scroll-trigger">Mua h</a>
+
+
+
+        <div class="header-bar-warp d-flex">
+            <!-- site logo -->
+            <a href="home.html" class="site-logo">
+                <img src="{{asset('HTML/img/logo.png')}}" alt=""> <!-- ./ -->
+            </a>
+            <nav class="top-nav-area w-100">
+                <div class="user-panel">
+                    <a href="">Login</a> / <a href="">Register</a>
+                </div>
+
+                <ul class="main-menu primary-menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="games.html">Games</a>
+                        <ul class="sub-menu">
+                            <li><a href="game-single.html">Game Singel</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="review.html">Reviews</a></li>
+                    <li><a href="blog.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                    <li><a href="games.html">Admin</a>
+                        <ul class="sub-menu">
+                            <li><a href="{{route('login.index')}}">Management</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </header>
+<!-- Header section end -->
 
-<!-- About Section -->
-<section id="about" class="about-section text-center">
+
+<!-- Hero section -->
+<section class="hero-section overflow-hidden">
+    <div class="hero-slider owl-carousel">
+        <div class="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg="{{asset('HTML/img/slider-bg-1.jpg')}}">
+            <div class="container">
+                <h2>Game on!</h2>
+                <p>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus. Donec vitae tempus dolor,<br>sit amet elementum lorem. Ut cursus tempor turpis.</p>
+                <a href="{{route('display')}}" class="site-btn">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
+            </div>
+        </div>
+        <div class="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg="{{asset('HTML/img/slider-bg-2.jpg')}}">
+            <div class="container">
+                <h2>Game on!</h2>
+                <p>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus. Donec vitae tempus dolor,<br>sit amet elementum lorem. Ut cursus tempor turpis.</p>
+                <a href="#" class="site-btn">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero section end-->
+
+
+<!-- Intro section -->
+<section class="intro-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2 class=" mb-4" style="color: orangered">Chương trình khuyến mãi</h2>
-                <p class="" style="color: orange">Khi mua trọn bộ Ps4 Slim, tặng ngay tay cầm Sony Ps4 Jet Black chính hãng.
-                     Và tặng game The Last of us Free có giá 14$ .</p>
+            <div class="col-md-4">
+                <div class="intro-text-box text-box text-white">
+                    <div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
+                    <h3>The best online game is out now!</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida....</p>
+                    <a href="#" class="read-more">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="intro-text-box text-box text-white">
+                    <div class="top-meta">11.11.18  /  in <a href="">Playstation</a></div>
+                    <h3>Top 5 best games in november</h3>
+                    <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum  labore suspendisse ultrices gravida....</p>
+                    <a href="#" class="read-more">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="intro-text-box text-box text-white">
+                    <div class="top-meta">11.11.18  /  in <a href="">Reviews</a></div>
+                    <h3>Get this game at a promo price</h3>
+                    <p>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida ncididunt ut labore ....</p>
+                    <a href="#" class="read-more">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
+                </div>
             </div>
         </div>
-        <img src="{{asset('startbootstrap-grayscale-gh-pages/img/gearps4.png')}}" class="img-fluid" alt="">
     </div>
 </section>
+<!-- Intro section end -->
 
-<!-- Projects Section -->
-<section id="projects" class="projects-section bg-light">
-    <div class="container">
 
-        <!-- Featured Project Row -->
-        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-            <div class="col-xl-8 col-lg-7">
-                <img class="img-fluid mb-3 mb-lg-0" src="{{asset('startbootstrap-grayscale-gh-pages/img/n.gif')}}" alt="">
-            </div>
-            <div class="col-xl-4 col-lg-5">
-                <div class="featured-text text-center text-lg-left">
-                    <h4 style="color: red">Những tựa game mới nhất!</h4>
-                    <p class="text-black-50 mb-0">Giờ đây, bạn có thể sở hữu cho mình tựa game yêu thích bằng cách đặt hàng thanh toán online hoặc mua đĩa, hỗ trợ ship trong phạm vi Hà Nội.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project One Row -->
-        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-            <div class="col-lg-6">
-                <img class="img-fluid" src="{{asset('startbootstrap-grayscale-gh-pages/img/ps4.jpg')}}" alt="">
-            </div>
-            <div class="col-lg-6">
-                <div class="bg-black text-center h-100 project">
-                    <div class="d-flex h-100">
-                        <div class="project-text w-100 my-auto text-center text-lg-left">
-                            <h4 class="text-white">Gear Ps4 chính hãng!</h4>
-                            <p class="mb-0 text-white-50"> Ps4 Gaming nhập khẩu dòng ps4 mới nhất và chính hãng. Bảo hành lên đến 10 tháng!</p>
-                            <hr class="d-none d-lg-block mb-0 ml-0">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Project Two Row -->
-        <div class="row justify-content-center no-gutters">
-            <div class="col-lg-6">
-                <img class="img-fluid" src="{{asset('startbootstrap-grayscale-gh-pages/img/l.jpg')}}" alt="">
-            </div>
-            <div class="col-lg-6 order-lg-first">
-                <div class="bg-black text-center h-100 project">
-                    <div class="d-flex h-100">
-                        <div class="project-text w-100 my-auto text-center text-lg-right">
-                            <h4 class="text-white">Sở hữu game số lượng lớn!</h4>
-                            <p class="mb-0 text-white-50">Bạn sẽ có cơ hội sở hữu cho mình số lượng lớn game hoàn toàn miễn phí trên ps4 nếu đặt hàng trong những sự kiện khuyến mãi lớn của Ps4 G!</p>
-                            <hr class="d-none d-lg-block mb-0 mr-0">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- Signup Section -->
-<section id="signup" class="signup-section">
+<!-- Blog section -->
+<section class="blog-section spad">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-lg-8 mx-auto text-center">
-
-                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                <h2 class="text-white mb-5">Hãy đăng kí theo dõi trang để nhận những thông tin mới nhất!</h2>
-
-                <form class="form-inline d-flex">
-                    <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
-                    <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
-                </form>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section class="contact-section bg-black">
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Address</h4>
-                        <hr class="my-4">
-                        <div class="small text-black-50">Ha Noi</div>
+            <div class="col-xl-9 col-lg-8 col-md-7">
+                <div class="section-title text-white">
+                    <h2>Latest News</h2>
+                </div>
+                <ul class="blog-filter">
+                    <li><a href="#">Racing</a></li>
+                    <li><a href="#">Shooters</a></li>
+                    <li><a href="#">Strategy</a></li>
+                    <li><a href="#">Online</a></li>
+                </ul>
+                <!-- Blog item -->
+                <div class="blog-item">
+                    <div class="blog-thumb">
+                        <img src="{{asset('HTML/img/blog/1.jpg')}}" alt=""> <!-- ./ -->
+                    </div>
+                    <div class="blog-text text-box text-white">
+                        <div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
+                        <h3>The best online game is out now!</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
+                        <a href="#" class="read-more">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
+                    </div>
+                </div>
+                <!-- Blog item -->
+                <div class="blog-item">
+                    <div class="blog-thumb">
+                        <img src="{{asset('HTML/img/blog/2.jpg')}}" alt="">
+                    </div>
+                    <div class="blog-text text-box text-white">
+                        <div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
+                        <h3>The best online game is out now!</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
+                        <a href="#" class="read-more">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
+                    </div>
+                </div>
+                <!-- Blog item -->
+                <div class="blog-item">
+                    <div class="blog-thumb">
+                        <img src="{{asset('HTML/img/blog/3.jpg')}}" alt="">
+                    </div>
+                    <div class="blog-text text-box text-white">
+                        <div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
+                        <h3>The best online game is out now!</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
+                        <a href="#" class="read-more">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-envelope text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Email</h4>
-                        <hr class="my-4">
-                        <div class="small text-black-50">
-                            <a href="#">namtien10101997@gmail.com</a>
+            <div class="col-xl-3 col-lg-4 col-md-5 sidebar">
+                <div id="stickySidebar">
+                    <div class="widget-item">
+                        <h4 class="widget-title">Trending</h4>
+                        <div class="trending-widget">
+                            <div class="tw-item">
+                                <div class="tw-thumb">
+                                    <img src="{{asset('HTML/img/blog-widget/1.jpg')}}" alt="#">
+                                </div>
+                                <div class="tw-text">
+                                    <div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
+                                    <h5>The best online game is out now!</h5>
+                                </div>
+                            </div>
+                            <div class="tw-item">
+                                <div class="tw-thumb">
+                                    <img src="{{asset('HTML/img/blog-widget/2.jpg')}}" alt="#">
+                                </div>
+                                <div class="tw-text">
+                                    <div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
+                                    <h5>The best online game is out now!</h5>
+                                </div>
+                            </div>
+                            <div class="tw-item">
+                                <div class="tw-thumb">
+                                    <img src="{{asset('HTML/img/blog-widget/3.jpg')}}" alt="#">
+                                </div>
+                                <div class="tw-text">
+                                    <div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
+                                    <h5>The best online game is out now!</h5>
+                                </div>
+                            </div>
+                            <div class="tw-item">
+                                <div class="tw-thumb">
+                                    <img src="{{asset('HTML/img/blog-widget/4.jpg')}}" alt="#">
+                                </div>
+                                <div class="tw-text">
+                                    <div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
+                                    <h5>The best online game is out now!</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-3 mb-md-0">
-                <div class="card py-4 h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                        <h4 class="text-uppercase m-0">Phone</h4>
-                        <hr class="my-4">
-                        <div class="small text-black-50">+84 87566436</div>
+                    <div class="widget-item">
+                        <div class="categories-widget">
+                            <h4 class="widget-title">categories</h4>
+                            <ul>
+                                <li><a href="">Games</a></li>
+                                <li><a href="">Gaming Tips & Tricks</a></li>
+                                <li><a href="">Online Games</a></li>
+                                <li><a href="">Team Games</a></li>
+                                <li><a href="">Community</a></li>
+                                <li><a href="">Uncategorized</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#" class="add">
+                            <img src="{{asset('HTML/img/add.jpg')}}" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="social d-flex justify-content-center">
-            <a href="#" class="mx-2">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="mx-2">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="mx-2">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-
     </div>
 </section>
+<!-- Blog section end -->
 
-<!-- Footer -->
-<footer class="bg-black small text-center text-white-50">
+
+<!-- Intro section -->
+<section class="intro-video-section set-bg d-flex align-items-end " data-setbg="{{asset('HTML/img/promo-bg.jpg')}}">
+    <a href="https://www.youtube.com/watch?v=uFsGy5x_fyQ" class="video-play-btn video-popup"><img src="{{asset('HTML/img/icons/solid-right-arrow.png')}}" alt="#"></a>
     <div class="container">
-        Copyright &copy; Your Website 2019
+        <div class="video-text">
+            <h2>Promo video of the game</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+        </div>
+    </div>
+</section>
+<!-- Intro section end -->
+
+
+<!-- Featured section -->
+<section class="featured-section">
+    <div class="featured-bg set-bg" data-setbg="{{asset('HTML/img/featured-bg.jpg')}}"></div>
+    <div class="featured-box">
+        <div class="text-box">
+            <div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
+            <h3>The game you’ve been waiting  for is out now</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquamet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum posuere porttitor justo id pellentesque. Proin id lacus feugiat, posuere erat sit amet, commodo ipsum. Donec pellentesque vestibulum metus...</p>
+            <a href="#" class="read-more">Read More  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></a>
+        </div>
+    </div>
+</section>
+<!-- Featured section end-->
+
+
+
+<!-- Newsletter section -->
+<section class="newsletter-section">
+    <div class="container">
+        <h2>Subscribe to our newsletter</h2>
+        <form class="newsletter-form">
+            <input type="text" placeholder="ENTER YOUR E-MAIL">
+            <button class="site-btn">subscribe  <img src="{{asset('HTML/img/icons/double-arrow.png')}}" alt="#"/></button>
+        </form>
+    </div>
+</section>
+<!-- Newsletter section end -->
+
+
+<!-- Footer section -->
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-left-pic">
+            <img src="{{asset('HTML/img/footer-left-pic.png')}}" alt="">
+        </div>
+        <div class="footer-right-pic">
+            <img src="{{asset('HTML/img/footer-right-pic.png')}}" alt="">
+        </div>
+        <a href="#" class="footer-logo">
+            <img src="{{asset('HTML/img/logo.png')}}" alt="">
+        </a>
+        <ul class="main-menu footer-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Games</a></li>
+            <li><a href="">Reviews</a></li>
+            <li><a href="">News</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <div class="footer-social d-flex justify-content-center">
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-behance"></i></a>
+        </div>
+        <div class="copyright"><a href="">Colorlib</a> 2018 @ All rights reserved</div>
     </div>
 </footer>
+<!-- Footer section end -->
 
-<!-- Bootstrap core JavaScript -->
-<script src="{{asset('startbootstrap-grayscale-gh-pages/vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('startbootstrap-grayscale-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-<!-- Plugin JavaScript -->
-<script src="{{asset('startbootstrap-grayscale-gh-pages/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-
-<!-- Custom scripts for this template -->
-<script src="{{asset('startbootstrap-grayscale-gh-pages/js/grayscale.min.js')}}"></script>
+<!--====== Javascripts & Jquery ======-->
+<script src="{{asset('HTML/js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('HTML/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('HTML/js/jquery.slicknav.min.js')}}"></script>
+<script src="{{asset('HTML/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('HTML/js/jquery.sticky-sidebar.min.js')}}"></script>
+<script src="{{asset('HTML/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('HTML/js/main.js')}}"></script>
 
 </body>
-
 </html>

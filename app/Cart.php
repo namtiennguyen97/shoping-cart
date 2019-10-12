@@ -21,11 +21,8 @@ class Cart
 
     public function add($item, $id)
     {
-        //Tao mot phan tu trong gio hang
         $storedItem = ['qty' => 0, 'price' => $item->price, 'item' => $item];
         if ($this->items) {
-            //Kiem tra san pham da ton tai trong gio hang chua
-            //Neu co roi thi cap nhat phan tu do
             if (array_key_exists($id, $this->items)) {
                 $storedItem = $this->items[$id];
             }
@@ -34,10 +31,7 @@ class Cart
         $storedItem['qty']++;
         $storedItem['price'] = $item->price * $storedItem['qty'];
         $this->items[$id] = $storedItem;
-
-        //Tang tong so luong san pham trong gio hang
         $this->totalQty++;
-        //Tinh tong gia tien trong gi hang
         $this->totalPrice += $item->price;
     }
 
@@ -48,7 +42,6 @@ class Cart
             if (array_key_exists($id, $productsIntoCart)) {
                 $priceProDelete = $productsIntoCart[$id]['price'];
                 $this->totalPrice -= $priceProDelete;
-                //giam tong so luong san pham co trong gio hang
                 $this->totalQty--;
                 unset($productsIntoCart[$id]);
                 $this->items = $productsIntoCart;
@@ -62,17 +55,11 @@ class Cart
             $itemsIntoCart = $this->items;
             if (array_key_exists($id, $itemsIntoCart)) {
                 $itemUpdate = $itemsIntoCart[$id];
-
-                //update tong so luong san pham trong gio hang
                 $qtyUpdate = $request->qty - $itemUpdate['qty'];
                 $this->totalQty += $qtyUpdate;
-                //update tong gia cua gio hang
                 $priceUpdate = $itemUpdate['item']->price * $request->qty - $itemUpdate['price'];
                 $this->totalPrice += $priceUpdate;
-                //update so luong san pham do
                 $itemUpdate['qty'] = $request->qty;
-
-                //update tong gia cua san pham do
                 $itemUpdate['price'] = $itemUpdate['item']->price * $request->qty;
                 $this->items[$id] = $itemUpdate;
 
